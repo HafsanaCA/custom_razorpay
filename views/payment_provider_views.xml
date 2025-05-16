@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_payment_provider_form_razorpay_custom" model="ir.ui.view">
+        <field name="name">payment.provider.form.razorpay.custom</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'custom_razorpay'">
+                    <field name="custom_razorpay_key_id"/>
+                    <field name="custom_razorpay_key_secret"/>
+                    <field name="custom_razorpay_webhook_secret"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -4,7 +4,7 @@
     'version': '1.0',
     'summary': 'Razorpay Payment Gateway Integration',
     'author': 'Hafsana CA',
-    'depends': ['base','website','payment'],
+    'depends': ['base','website','payment', 'website_sale'],
     'data': [
             'data/payment_provider_data.xml',
             'views/payment_provider_views.xml',

@@ -46,4 +46,3 @@ class PaymentTransaction(models.Model):
             'is_tokenize_request': self.tokenize,
             'razorpay_order_id': order_id,
         }
-

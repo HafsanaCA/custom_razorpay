@@ -20,20 +20,8 @@ class PaymentProvider(models.Model):
 
 
     def _razorpay_make_request(self, endpoint, payload=None, method='POST'):
-        """ Make a request to Razorpay API at the specified endpoint.
-
-        Note: self.ensure_one()
-
-        :param str endpoint: The endpoint to be reached by the request.
-        :param dict payload: The payload of the request.
-        :param str method: The HTTP method of the request.
-        :return The JSON-formatted content of the response.
-        :rtype: dict
-        :raise ValidationError: If an HTTP error occurs.
-        """
         self.ensure_one()
 
-        # TODO: Make api_version a kwarg in master.
         api_version = self.env.context.get('razorpay_api_version', 'v1')
         url = f'https://api.razorpay.com/{api_version}/{endpoint}'
         headers = None
